@@ -27,7 +27,7 @@ const Profile = () => {
       }
 
 
-      <p>User profile</p>
+      <p>{user?.displayName}</p>
     </div>
   );
 };
