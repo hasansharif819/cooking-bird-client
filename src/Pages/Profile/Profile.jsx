@@ -6,30 +6,30 @@ import { AuthContext } from "../../Auth/AuthProvider";
 
 
 const Profile = () => {
-    const { user } = useContext(AuthContext);
-    // console.log("User profile = ", user)
+  const { user } = useContext(AuthContext);
+  console.log("User profile = ", user)
 
-    return (
-        <div>
-            <Helmet>
-                <title>Rooftop/profile </title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
-            </Helmet>
+  return (
+    <div>
+      <Helmet>
+        <title>Rooftop/profile </title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
 
-            {
-      !user ? <>
-        <Cover img={OrderImg} title="profile"></Cover>
-      </>
-        :
-        <>
-          <Cover img={user.photoURL} title="profile"></Cover>
+      {
+        !user ? <>
+          <Cover img={OrderImg} title="profile"></Cover>
         </>
-    }
+          :
+          <>
+            <Cover img={user.photoURL} title={user.displayName}></Cover>
+          </>
+      }
 
-            
-            <p>User profile</p>
-        </div>
-    );
+
+      <p>User profile</p>
+    </div>
+  );
 };
 
 export default Profile;

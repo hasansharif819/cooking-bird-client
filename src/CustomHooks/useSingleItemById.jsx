@@ -1,20 +1,29 @@
-import { useQuery } from '@tanstack/react-query';
-import useAxiosPublic from './useAxiosPublic';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const useSingleItemById = (id) => {
-  const axiosPublic = useAxiosPublic();
-  
-  const { data: menuItem, isLoading: loading, refetch } = useQuery({
-    queryKey: ['menuItem', id],
-    queryFn: async () => {
-      const response = await axiosPublic.get(`/menu/${id}`);
-      console.log("res = ", response)
-      return response.data;
-    },
-    enabled: !!id,
-  });
+    const [menuItem, setMenuItem] = useState([]);
+    const [loading, setLoading] = useState(true);
+    console.log("id = ", id)
 
-  return { menuItem, loading, refetch };
+    useEffect(() => {
+        const fetchMenu = async () => {
+            try {
+                const response = await axios.get(`https://cooking-bird-server.vercel.app/menu/${id}`);
+                // console.log("res = ", response);
+                setMenuItem(response.data);
+            } catch (error) {
+                console.error("Error fetching menu:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMenu();
+    }, [id]);
+
+    return [menuItem, loading];
 };
 
 export default useSingleItemById;
+

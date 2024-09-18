@@ -10,7 +10,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="footer flex flex-col p-10 bg-neutral text-neutral-content">
+    <footer className="footer flex flex-col p-10 bg-neutral text-neutral-content mt-[50px]">
       <div className="flex justify-between w-full">
         <div>
           <p>ROOFTOP CAFE<br />Providing reliable tech since 1992</p>

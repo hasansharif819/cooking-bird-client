@@ -21,8 +21,8 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory/PaymentHistory";
 import Profile from "../Pages/Profile/Profile";
-import PopularMenu from "../Pages/Home/PopularMenu";
 import MenuDetails from "../Pages/Popular/MenuDetails";
+import PopularMenuItems from "../Pages/Popular/Popular";
 
      export const router = createBrowserRouter([
             {
@@ -40,7 +40,7 @@ import MenuDetails from "../Pages/Popular/MenuDetails";
                 },
                 {
                   path:'/popular-menu',
-                  element:<PopularMenu></PopularMenu>
+                  element:<PopularMenuItems></PopularMenuItems>
                 },
                 {
                   path:'/popular-menu/:id',

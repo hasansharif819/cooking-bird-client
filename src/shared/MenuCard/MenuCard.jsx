@@ -13,10 +13,10 @@ const MenuCard = ({ item }) => {
           alt={name}
         />
         <div className="flex-1 space-y-2">
-          <h3 className="uppercase font-bold text-lg">{name}</h3>
+          <h3 className="uppercase font-bold text-lg text-primary">{name}</h3>
           <p className="text-gray-600">{recipe}</p>
         </div>
-        <p className="text-yellow-500 font-semibold text-lg">${price}</p>
+        <p className="font-semibold text-lg text-primary">${price}</p>
       </div>
     </Link>
   );

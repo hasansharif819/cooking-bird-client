@@ -6,7 +6,7 @@ import MenuCard from "../../shared/MenuCard/MenuCard";
 const PopularMenu = () => {
 
   const [menu] = useMenu()
-  const popularItem = menu.filter(item => item.category === "popular");
+  const popularItem = menu.filter(item => item.isPopular === true);
 
   return (
     <section className="container">
